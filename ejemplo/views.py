@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from ejemplo.models import Familiar 
 from ejemplo.forms import Buscar, FamiliarForm
 from django.views import View
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView
 
 def index(request):
     return render(request, "ejemplo/saludar.html")
@@ -134,4 +134,7 @@ class FamiliarActualizar(UpdateView):
   model = Familiar
   success_url = "/success_updated_message"
   fields = ["nombre", "direccion", "numero_pasaporte"]
+  
 
+class FamiliarDetalle(DetailView):
+  model = Familiar
