@@ -1,10 +1,15 @@
 {% extends 'ejemplo_dos/base.html' %}
 
 {% block contenido%}
-
+<a href="{% url 'ejemplo_dos_crear' %}">Crear Post</a>
 <ul>
 {% for post in object_list %}
-    <li>{{post.titulo}}</li>
+    <li>
+        {{post.publicado_el}} - - {{post.titulo}}
+        <a href="{% url 'ejemplo_dos_borrar' post.id %}">Borrar</a>
+        <a href="{% url 'ejemplo_dos_actualizar' post.id %}">Actualizar</a>
+        <a href="{% url 'ejemplo_dos_detalle' post.id %}">Ver Detalle</a>
+    </li>
 {% endfor %}
 </ul>
 
