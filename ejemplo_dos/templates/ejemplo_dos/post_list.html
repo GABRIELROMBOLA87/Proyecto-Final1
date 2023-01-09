@@ -9,7 +9,7 @@
 <ul>
 {% for post in object_list %}
     <li>
-        {{post.publicado_el}} - - {{post.titulo}}
+        {{post.Repuesto}}
         {% if user.is_authenticated %}
         <a href="{% url 'ejemplo_dos_borrar' post.id %}">Borrar</a>
         <a href="{% url 'ejemplo_dos_actualizar' post.id %}">Actualizar</a>
