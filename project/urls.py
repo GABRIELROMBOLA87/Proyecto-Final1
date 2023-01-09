@@ -19,7 +19,8 @@ from django.urls import path
 from ejemplo.views import (index , saludar_a, sumar, buscar, monstrar_familiares,
                            BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, BorrarFamiliar,
                            FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar, FamiliarDetalle)
-from ejemplo_dos.views import index, PostList, PostCrear, PostActualizar, PostBorrar, PostDetalle
+from ejemplo_dos.views import (index, PostList, PostCrear, PostActualizar,
+                               PostBorrar, PostDetalle, UserSignUp)
 
 
 urlpatterns = [
@@ -45,4 +46,5 @@ urlpatterns = [
     path('ejemplo_dos/<int:pk>/actualizar/', PostActualizar.as_view(), name="ejemplo_dos_actualizar"),
     path('ejemplo_dos/<int:pk>/borrar/', PostBorrar.as_view(), name="ejemplo_dos_borrar"),
     path('ejemplo_dos/<int:pk>/detalle/', PostDetalle.as_view(), name="ejemplo_dos_detalle"),
+    path('ejemplo_dos/signup/', UserSignUp.as_view(), name="ejemplo_dos_signup"),
     ]

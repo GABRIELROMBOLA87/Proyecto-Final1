@@ -3,6 +3,7 @@ from django.views.generic import ListView, CreateView, DetailView, DeleteView, U
 from ejemplo_dos.models import Post
 from django.urls import reverse_lazy
 from ejemplo_dos.forms import UsuarioForm
+from django.contrib.auth.views import LoginView, LogoutView
 
 
 # Create your views here.
@@ -34,3 +35,9 @@ class UserSignUp(CreateView):
     form_class = UsuarioForm
     template_name = 'registration/signup.html'
     success_url = reverse_lazy('ejemplo_dos_listar')
+
+class UserLogin(LoginView):
+    next_page = reverse_lazy("ejemplo_dos_listar")
+
+class UserLogout(LogoutView):
+    next_page = reverse_lazy("ejemplo_dos_listar")
