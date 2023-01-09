@@ -41,3 +41,5 @@ class UserLogin(LoginView):
 
 class UserLogout(LogoutView):
     next_page = reverse_lazy("ejemplo_dos_listar")
+
+
