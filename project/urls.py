@@ -20,7 +20,7 @@ from ejemplo.views import (index , saludar_a, sumar, buscar, monstrar_familiares
                            BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, BorrarFamiliar,
                            FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar, FamiliarDetalle)
 from ejemplo_dos.views import (index, PostList, PostCrear, PostActualizar,
-                               PostBorrar, PostDetalle, UserSignUp)
+                               PostBorrar, PostDetalle, UserSignUp, UserLogin, UserLogout)
 
 
 urlpatterns = [
@@ -47,4 +47,6 @@ urlpatterns = [
     path('ejemplo_dos/<int:pk>/borrar/', PostBorrar.as_view(), name="ejemplo_dos_borrar"),
     path('ejemplo_dos/<int:pk>/detalle/', PostDetalle.as_view(), name="ejemplo_dos_detalle"),
     path('ejemplo_dos/signup/', UserSignUp.as_view(), name="ejemplo_dos_signup"),
+    path('ejemplo_dos/login/', UserLogin.as_view(), name="ejemplo_dos_login"),
+    path('ejemplo_dos/logout/', UserLogout.as_view(), name="ejemplo_dos_logout"),
     ]
