@@ -3,6 +3,7 @@ from django.views.generic import ListView, CreateView, DetailView, DeleteView, U
 from ejemplo_dos.models import Post
 from django.urls import reverse_lazy
 from ejemplo_dos.forms import UsuarioForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 
 
@@ -14,7 +15,7 @@ def index(request):
 class PostDetalle(DetailView):
     model = Post
 
-class PostList(ListView):
+class PostListar(ListView):
     model = Post
     
 class PostCrear(CreateView):
